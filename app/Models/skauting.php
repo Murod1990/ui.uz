@@ -9,12 +9,11 @@ class skauting extends Model
 {
     use HasFactory;
 
-protected $fillabel = [
-'skauting_maydon',
-'skauting_foydalanuvchi',
-'skauting_lavozim',
-'skauting_foto'
-
+    protected $fillabel = [
+        'skauting_maydon',
+        'skauting_foydalanuvchi',
+        'skauting_lavozim',
+        'skauting_foto',
     ];
     protected $guarded = [];
 }
