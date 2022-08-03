@@ -14,6 +14,6 @@ class SkautingController extends Controller
     //     GROUP BY sekons.ekin_nomi,sekons.aniqlangan_maydon');
      
    
-        return  $data;
+        return ;
     }
 }
