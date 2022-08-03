@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Components\FlashMessages;
 
 class AppServiceProvider extends ServiceProvider
 {
+    use FlashMessages;
     /**
      * Register any application services.
      *
@@ -23,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('partials.messages', function ($view) {
+
+            $messages = self::messages();
+  
+            return $view->with('messages', $messages);
+        });
     }
 }
