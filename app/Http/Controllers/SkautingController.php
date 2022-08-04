@@ -25,7 +25,7 @@ class SkautingController extends Controller
                 ' Hisobot_qurish.xlsx'
             );
         } else {
-            Session::flash('message', 'Hech qanday maʼlumot topilmadi');
+            Session::flash('message', 'Hech qanday ma`lumot topilmadi');
             Session::flash('alert-info', 'info');
             return \Redirect::back()->withSuccess(
                 'Jadval ma\'lumotlari tozalanadi.'
