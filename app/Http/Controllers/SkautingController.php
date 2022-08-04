@@ -18,8 +18,7 @@ class SkautingController extends Controller
     public function Hisobot(Request $request)
     {
         if (sekon::query()->count() > 0 && skauting::query()->count() > 0) {
-            // Session::flash('message', 'Muvaffaqiyatli eksport qilindi!');
-            // Session::flash('alert-success', 'success');
+            
             // return Excel::download(
             //     new HisobotExportData(),
             //     ' Hisobot_qurish.xlsx'
@@ -38,6 +37,8 @@ class SkautingController extends Controller
                 ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon')
                 ->get();
                 // dd($data);
+                // Session::flash('message', 'Muvaffaqiyatli eksport qilindi!');
+                // Session::flash('alert-success', 'success');
                 return view('tekshir',['data'=> $data]);
         } else {
             Session::flash('message', 'Hech qanday ma`lumot topilmadi');

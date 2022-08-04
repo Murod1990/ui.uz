@@ -4,7 +4,7 @@ Hammasi yaxshi
 @endsection
 
 @section('content')
-
+{{-- @include('partials.messages') --}}
 <h1 >Hammaga salom yaxshimisizlar nima gaplar</h1>
 
 
