@@ -40,7 +40,7 @@ class SkautingController extends Controller
                 // dd($data);
                 return view('tekshir',['data'=> $data]);
         } else {
-            Session::flash('message', 'Hech qanday maʼlumot topilmadi');
+            Session::flash('message', 'Hech qanday ma`lumot topilmadi');
             Session::flash('alert-info', 'info');
             return \Redirect::back()->withSuccess(
                 'Jadval ma\'lumotlari tozalanadi.'
