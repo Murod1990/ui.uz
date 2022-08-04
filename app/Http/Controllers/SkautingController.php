@@ -18,12 +18,27 @@ class SkautingController extends Controller
     public function Hisobot(Request $request)
     {
         if (sekon::query()->count() > 0 && skauting::query()->count() > 0) {
-            Session::flash('message', 'Muvaffaqiyatli eksport qilindi!');
-            Session::flash('alert-success', 'success');
-            return Excel::download(
-                new HisobotExportData(),
-                ' Hisobot_qurish.xlsx'
-            );
+            // Session::flash('message', 'Muvaffaqiyatli eksport qilindi!');
+            // Session::flash('alert-success', 'success');
+            // return Excel::download(
+            //     new HisobotExportData(),
+            //     ' Hisobot_qurish.xlsx'
+            // );
+            $data = DB::table('sekons')
+                ->distinct('sekons.polya_kodi')
+                ->leftJoin(
+                    'skautings',
+                    'sekons.polya_kodi',
+                    '=',
+                    'skautings.skauting_maydon'
+                )
+                ->selectRaw(
+                    'sekons.ekin_nomi,sekons.aniqlangan_maydon,sekons.polya_kodi, COUNT(skautings.skauting_maydon) AS count, SUM(skautings.skauting_foto) as sum'
+                )
+                ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon')
+                ->get();
+                // dd($data);
+                return view('tekshir',['data'=> $data]);
         } else {
             Session::flash('message', 'Hech qanday maʼlumot topilmadi');
             Session::flash('alert-info', 'info');
