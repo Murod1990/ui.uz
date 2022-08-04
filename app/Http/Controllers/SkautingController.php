@@ -34,7 +34,7 @@ class SkautingController extends Controller
                 ->selectRaw(
                     'sekons.ekin_nomi,sekons.aniqlangan_maydon,sekons.polya_kodi, COUNT(skautings.skauting_maydon) AS count, SUM(skautings.skauting_foto) as sum'
                 )
-                ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon')
+                ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon','sekons.polya_kodi')
                 ->get();
                 // dd($data);
                 // Session::flash('message', 'Muvaffaqiyatli eksport qilindi!');

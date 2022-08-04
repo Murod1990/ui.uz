@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Hammasi yaxshi
+Hisobot
 @endsection
 
 @section('content')

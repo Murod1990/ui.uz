@@ -17,8 +17,8 @@ class HisobotExportData implements WithHeadings, FromCollection
             'Ekin turi',
             'aniqlangan_maydon',
             'polya_kodi',
-            'skauting soni',
-            'jami',
+            'Skauting soni',
+            'jami skautinglar',
         ];
     }
 
@@ -35,7 +35,7 @@ class HisobotExportData implements WithHeadings, FromCollection
             ->selectRaw(
                 'sekons.ekin_nomi,sekons.aniqlangan_maydon,sekons.polya_kodi, COUNT(skautings.skauting_maydon) AS count, SUM(skautings.skauting_foto) as sum'
             )
-            ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon')
+            ->groupBy('sekons.ekin_nomi', 'sekons.aniqlangan_maydon','sekons.polya_kodi')
             ->get();
     }
 }
