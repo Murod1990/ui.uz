@@ -2,7 +2,7 @@
 @section('title')
     Hisobot qurish
 @endsection
-@include ('partials.messages')
+{{-- @include ('partials.messages') --}}
 @section('content')
     <div class="container">
         <div class="row">

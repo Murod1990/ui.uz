@@ -14,11 +14,11 @@ class HisobotExportData implements WithHeadings, FromCollection
     public function headings(): array
     {
         return [
-            'ekin_nomi',
+            'Ekin turi',
             'aniqlangan_maydon',
             'polya_kodi',
-            'count',
-            'sum',
+            'skauting soni',
+            'jami',
         ];
     }
 
