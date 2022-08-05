@@ -5,17 +5,17 @@ Hisobot
 
 @section('content')
 {{-- @include('partials.messages') --}}
-<h1 >Hammaga salom yaxshimisizlar nima gaplar</h1>
+<h1 >Skauting hisobot tayyor</h1>
 
 
 <table id="example" class="order-column" style="width:100%">
         <thead>
             <tr>
-                <th>ekin_nomi</th>
-                <th>aniqlangan_maydon</th>
-                <th>polya_kodi</th>
-                <th>count</th>
-                <th>sum</th>
+                <th>Ekin nomi</th>
+                <th>Aniqlangan maydon</th>
+                <th>Maydon kodi</th>
+                <th>Skauting soni</th>
+                <th>Jami skauting</th>
                
             </tr>
         </thead>

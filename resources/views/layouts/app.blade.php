@@ -21,15 +21,20 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{asset('js/parsley.min.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+               
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Agroklaster') }}
                 </a>
+                <marquee behavior="" direction=""> Diqqat sayt test rejimida ishlamoqda</marquee>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,6 +88,7 @@
             @yield('content')
         </main>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script><!-- Qidiruv plaginlaridan biri asosiy -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> <!-- Qidiriv plaginlaridan biridir asosiy-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script><!-- Excel export qilish -->
@@ -94,6 +100,8 @@
 
 <script>
     $(document).ready(function () {
+       
+
     $('#example').DataTable({
         
         "language": {
@@ -127,6 +135,7 @@
     });
     
 });
+
 </script>
 
 </body>

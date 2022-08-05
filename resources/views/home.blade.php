@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Hisobot qurish
+    Hisobot
 @endsection
 {{-- @include ('partials.messages') --}}
 @section('content')
@@ -15,57 +15,64 @@
                     @endforeach
                 </div>
             </div>
+           
+                    @if (session()->has('saqlash'))
+                       <script>
+                        Swal.fire({
+                            title: '{{ session('saqlash')}}',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                            })
+                        
+                       </script>
+                           
+                        
+                    @endif
+
             <div class="col-sm-6">
                 <div class="card-header">
-                    <small id="helpId" class="text-muted">sezon hisobotni yuklang qabul qilish .xlsx .xls fayl
+                    <small id="helpId" class="text-muted">Sezon hisobotni yuklang qabul qilish fayl turi  .xlsx .xls 
                         yuklang</small>
                 </div>
                 <div class="form-group">
-                    <form action="/sezon/yukla" method="post" enctype="multipart/form-data">
+                    <form action="/sezon/yukla" method="post" id="form" data-parsley-validate ='' enctype="multipart/form-data">
                         @csrf
 
-                        <input type="file" name="sezon" class="form-control" placeholder="sezon faylni yukalash"
+                        <input type="file" name="sezon" class="form-control" placeholder="sezon faylni yukalash" required="" data-parsley-max-file-size="1500"
                             aria-describedby="helpId">
-                        <small id="helpId" class="text-muted"></small>
-
-                        <button type="submit" class="btn btn-primary p-2 mt-2"> yuklamoq</button>
-
-                    </form>
-
-                </div>
-            </div>
+                         
+                       </div>
+                
+              </div>
             <div class="col-sm-6">
                 <div class="card-header">
-                    <small id="helpId" class="text-muted">Skauting hisobotni yuklang qabul qilish .xlsx .xls fayl
-                        yuklang</small>
+                     <small id="helpId" class="text-muted">Skauting hisobotni yuklash qabul qilish fayl turi .xlsx .xls yuklang</small>
                 </div>
                 <div class="form-group">
-
-                    <form action="/skauting/yukla" method="post" enctype="multipart/form-data">
-                        @csrf
-
-
-                        <input type="file" name="skauting" class="form-control" placeholder="" aria-describedby="helpId">
-
-
-                        <button type="submit" class="btn btn-primary p-2 mt-2"> yuklamoq</button>
+                    <input type="file" name="skauting" class="form-control" placeholder="" required="" data-parsley-max-file-size="1500" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted"></small>
+                </div>
+                
+            </div>
+    
+            <button type="submit" class="btn btn-primary p-2 mt-2"> Yuklash</button>
 
                     </form>
-
-                </div>
-            </div>
-
+           
             {{-- <a href="/tekshir" type="button" class="btn btn-success mt-2"> Hisobot qurish</a> --}}
 
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <a href="/tekshir" type="button" class="btn btn-lg btn-success mt-2 d-grid gap-2 col-3 mx-auto"> Hisobot
-                    qurish</a>
+            <div class="col-md-6">
+                <a href="/tekshir" type="button" class="btn btn-lg btn-success mt-2 d-grid gap-2 col-3 mx-auto"> Hisobot</a>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <a href="{{ route('clear') }}" type="button" class="btn btn-lg btn-danger mt-2 d-grid gap-2 col-3 mx-auto">
-                    Toza</a>
+                    Tozalash</a>
             </div>
         </div>
         <hr />
@@ -74,14 +81,7 @@
 
 
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                </div>
+               
 
                 <table id="example" class="order-column" style="width:100%">
                     <thead>

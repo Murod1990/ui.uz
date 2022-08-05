@@ -23,6 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('home/export', [App\Http\Controllers\HomeController::class, 'export']);
 Route::redirect('/here', '/there');
 Route::post('/sezon/yukla',[\App\Http\Controllers\SekonController::class,'import']);
-Route::post('/skauting/yukla',[\App\Http\Controllers\SekonController::class,'import_skauting']);
+
 Route::get('/tekshir',[\App\Http\Controllers\SkautingController::class,'Hisobot']);
 Route::get('/clear',[\App\Http\Controllers\SkautingController::class,'clear'])->name('clear');

@@ -19,10 +19,7 @@ class SkautingController extends Controller
     {
         if (sekon::query()->count() > 0 && skauting::query()->count() > 0) {
             
-            // return Excel::download(
-            //     new HisobotExportData(),
-            //     ' Hisobot_qurish.xlsx'
-            // );
+            // return Excel::download( new HisobotExportData(),' Hisobot_qurish.xlsx');
             $data = DB::table('sekons')
                 ->distinct('sekons.polya_kodi')
                 ->leftJoin(
