@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Exports\UsersExport;
+use App\Exports\HisobotExportData;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -27,8 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-       $date = User::all();
-        return view('home',['date'=> $date]);
+       
+        return view('home');
     }
     
     public function export() 
@@ -36,4 +37,11 @@ class HomeController extends Controller
         
         return Excel::download(new UsersExport, 'users.xlsx');
     }
+
+    public function exportsk()
+    {
+        
+        return Excel::download( new HisobotExportData(),' Hisobot_qurish.xlsx');
+    }
+  
 }

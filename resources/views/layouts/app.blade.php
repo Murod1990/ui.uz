@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+  
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('js/parsley.min.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
@@ -28,13 +28,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Agroklaster') }}
                 </a>
-                <marquee behavior="" direction=""> Diqqat sayt test rejimida ishlamoqda</marquee>
+              
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -70,7 +70,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('chiqish') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -83,21 +83,22 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+       
+       
     </div>
+    <marquee behavior="" direction=""> Diqqat sayt test rejimida ishlamoqda</marquee>
+       
+       @yield('content')
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script><!-- Qidiruv plaginlaridan biri asosiy -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> <!-- Qidiriv plaginlaridan biridir asosiy-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script><!-- Excel export qilish -->
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script><!-- Excelga export qilish uchu ishlatiladi  -->
-   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.min.js"></script>
-   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
-    <script src="dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous""></script>
-
+   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script><!--jadval uchun bootstrap -->
+   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.min.js"></script><!-- bootstrap tugma uchun -->
+   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script><!-- Tugma uchun ishlatiladi -->
+   
+   <script src="dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous""></script>
 <script>
     $(document).ready(function () {
        

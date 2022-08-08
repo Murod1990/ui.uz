@@ -51,7 +51,7 @@ class SkautingController extends Controller
         sekon::query()->truncate();
         skauting::query()->truncate();
         Session::flash('message', 'Jadval ma\'lumotlari tozalanadi.');
-        Session::flash('alert-success', 'success');
+        Session::flash('alert-warning', 'success');
         return \Redirect::back()->withSuccess(
             'Jadval ma\'lumotlari tozalanadi.'
         );

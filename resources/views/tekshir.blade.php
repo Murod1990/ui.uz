@@ -4,14 +4,15 @@ Hisobot
 @endsection
 
 @section('content')
-{{-- @include('partials.messages') --}}
-<h1 >Skauting hisobot tayyor</h1>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-8">
 
-
-<table id="example" class="order-column" style="width:100%">
-        <thead>
+        <h1 >Skauting hisobot tayyor</h1>
+  <table id="example" class=" table table-bordered border-primary" style="width:100%">
+        <thead class="table-dark">
             <tr>
-                <th>Ekin nomi</th>
+                <th >Ekin nomi</th>
                 <th>Aniqlangan maydon</th>
                 <th>Maydon kodi</th>
                 <th>Skauting soni</th>
@@ -33,6 +34,12 @@ Hisobot
             @endforeach
         </tbody>
 </table>
+
+
+        </div>
+    </div>
+</div>
+
 
 
 @endsection

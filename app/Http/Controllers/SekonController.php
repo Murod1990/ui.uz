@@ -15,27 +15,22 @@ class SekonController extends Controller
        'skauting' => 'required| mimes:xls,xlsx',
         ]);
 
+       
+
     $qiymat = $request->file('sezon');
     $skauting = $request->file('skauting');
-
-    Excel::import(new sezonImport, $qiymat);
-    Excel::import(new skautingImport, $skauting);
-    $request->session()->flash('saqlash','Faylar saqlandi');
+    
+     $sezon = Excel::import(new sezonImport, $qiymat);
+     $skauting= Excel::import(new skautingImport, $skauting);
+      
+     $request->session()->flash('saqlash','Faylar saqlandi');
+  
+  
+   
     return redirect('/home');
 }
        
 
     }
 
-    /*public function import_skauting(Request $request)
-{
-    $this->validate($request,[
-        'skauting' => 'required| mimes:xls,xlsx',
-    ]);
-    $skauting = $request->file('skauting');
-    Excel::import(new skautingImport, $skauting);
-      
-   return redirect('/home')->with('success', ' Skauting Fayl yuklandi!');
-}
-*/
 

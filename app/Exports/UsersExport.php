@@ -7,8 +7,10 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithCustomStartCell;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromQuery;
+
 class UsersExport implements FromCollection,WithCustomStartCell,WithHeadings
 {
+   
     /**
     * @return \Illuminate\Support\Collection
     */
@@ -28,4 +30,7 @@ class UsersExport implements FromCollection,WithCustomStartCell,WithHeadings
             'vaqt',
         ];
     }
+
+
+   
 }

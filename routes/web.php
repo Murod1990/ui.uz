@@ -26,3 +26,5 @@ Route::post('/sezon/yukla',[\App\Http\Controllers\SekonController::class,'import
 
 Route::get('/tekshir',[\App\Http\Controllers\SkautingController::class,'Hisobot']);
 Route::get('/clear',[\App\Http\Controllers\SkautingController::class,'clear'])->name('clear');
+Route::get('/excel-export',[\App\Http\Controllers\HomeController::class,'exportsk']);
+
