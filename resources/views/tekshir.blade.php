@@ -1,14 +1,20 @@
-@extends('layouts.app')
+@extends('home')
 @section('title')
 Hisobot
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-sm-8">
+       <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a href="/home" class="hisobot_tugma">Bosh sahifa</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Hisobot</li>
+            </ol>
+      </nav>
 
-        <h1 >Skauting hisobot tayyor</h1>
+        <h1 class="skauting">Hisobot tayyor</h1>
   <table id="example" class=" table table-bordered border-primary" style="width:100%">
         <thead class="table-dark">
             <tr>

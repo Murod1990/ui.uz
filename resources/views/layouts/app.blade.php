@@ -9,22 +9,16 @@
 
     <title>@yield('title')</title>
 
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-  
+     <link rel="stylesheet" href="{{asset('css/style.css') }}">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('js/parsley.min.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   
 </head>
 <body>
     <div id="app">
@@ -57,7 +51,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Ro`yxatdan o`tish') }}</a>
                                 </li>
                             @endif
                         @else
@@ -86,7 +80,7 @@
        
        
     </div>
-    <marquee behavior="" direction=""> Diqqat sayt test rejimida ishlamoqda</marquee>
+    <marquee width = "80%" behavior=slide class="marque" > Diqqat sayt test rejimida ishlamoqda</marquee>
        
        @yield('content')
     
@@ -99,45 +93,7 @@
    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script><!-- Tugma uchun ishlatiladi -->
    
    <script src="dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous""></script>
-<script>
-    $(document).ready(function () {
-       
-
-    $('#example').DataTable({
-        
-        "language": {
-    "decimal":        "",
-    "emptyTable":     "Jadvalda ma'lumotlar mavjud emas",
-    "info":           "Ko`rsatilmoqda _START_ to _END_ of _TOTAL_ yozuvlar",
-    "infoEmpty":      "Ko`rsatilmoqda 0 dan 0 gacha 0 yozuvlar",
-    "infoFiltered":   "(filtrlangan from _MAX_ total yozuvlar)",
-    "infoPostFix":    "",
-    "thousands":      ",",
-    "lengthMenu":     "Ko`rsatmoq _MENU_ yozuvlar",
-    "loadingRecords": "Kuting...",
-    "processing":     "",
-    "search":         "Qidiruv:",
-    "zeroRecords":    "Hechqanday yozuv topilmadi",
-   
-    "paginate": {
-        "first":      "Birinchidan",
-        "last":       "Oxirgi",
-        "next":       "Keyingisi",
-        "previous":   "Oldingi"
-    },
-        },
-
-        dom: 'Bfrtip',
-        buttons: [ {
-            extend: 'excelHtml5',
-            autoFilter: true,
-            sheetName: 'Hisobot'
-        } ]
-    });
-    
-});
-
-</script>
+   <script src="{{asset('js/datajadval.js')}}"> </script>
 
 </body>
 </html>

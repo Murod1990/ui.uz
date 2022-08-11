@@ -14,6 +14,9 @@ class sezonImport implements ToModel
     */
     public function model(array $row)
     {
+
+
+
         return new sekon([
             'polya_kodi'=> $row[2],
             'Dzz_maydon' => $row[3],

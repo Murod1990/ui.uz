@@ -10,22 +10,25 @@ class SekonController extends Controller
 {
     public function import(Request $request) 
     {
-        $this -> validate($request,[
+        $validat = $request->validate([
        'sezon' => 'required| mimes:xls,xlsx',
        'skauting' => 'required| mimes:xls,xlsx',
         ]);
 
-       
+       if (!empty($validat))
+        {
+        $qiymat = $request->file('sezon');
+        $skauting = $request->file('skauting');
+        
+         $sezon = Excel::import(new sezonImport, $qiymat);
+         $skauting= Excel::import(new skautingImport, $skauting);
+          
+         $request->session()->flash('saqlash','Faylar saqlandi');
+       }
+       else{
+        return "Fayl ma'lumotlari mavjud emas";
+       }
 
-    $qiymat = $request->file('sezon');
-    $skauting = $request->file('skauting');
-    
-     $sezon = Excel::import(new sezonImport, $qiymat);
-     $skauting= Excel::import(new skautingImport, $skauting);
-      
-     $request->session()->flash('saqlash','Faylar saqlandi');
-  
-  
    
     return redirect('/home');
 }
