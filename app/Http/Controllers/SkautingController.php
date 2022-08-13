@@ -15,7 +15,7 @@ class SkautingController extends Controller
 {
     use FlashMessages;
 
-    public function Hisobot(Request $request)
+    public function Hisobot()
     {
         if (sekon::query()->count() > 0 && skauting::query()->count() > 0) {
             
@@ -23,10 +23,7 @@ class SkautingController extends Controller
             $data = DB::table('sekons')
                 ->distinct('sekons.polya_kodi')
                 ->leftJoin(
-                    'skautings',
-                    'sekons.polya_kodi',
-                    '=',
-                    'skautings.skauting_maydon'
+                    'skautings','sekons.polya_kodi','=','skautings.skauting_maydon'
                 )
                 ->selectRaw(
                     'sekons.ekin_nomi,sekons.aniqlangan_maydon,sekons.polya_kodi, COUNT(skautings.skauting_maydon) AS count, SUM(skautings.skauting_foto) as sum'
